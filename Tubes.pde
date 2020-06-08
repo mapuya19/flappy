@@ -15,7 +15,7 @@ class Tubes {
   }
 
   void draw() {
-    fill(255, 255, 255);
+    fill(136, 204, 0);
 
     // Draw first set of tubes
     rect(posX, 0, tubeWidth, topTube);

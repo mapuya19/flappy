@@ -15,7 +15,7 @@ class Score {
     if (birdAlive) {
       if (bird.posX == (tubes.posX + (tubeWidth)) || bird.posX == (tubes.posX2 + (tubeWidth))) {
         score++;
-        point.play(1, 0, 1);
+        point.play();
       }
     }
   }

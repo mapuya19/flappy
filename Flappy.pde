@@ -1,7 +1,5 @@
-import processing.sound.*; 
-
-// IMPORTANT: Must install SoundFile library using Processing IDE if running from source; 
-// Cannot export to Application due to SoundFile library usage
+import processing.sound.*;
+// If exporting to Application, must manually move filse to "data" folder within Java folder
 
 // Global Variables
 Tubes tubes;
@@ -59,19 +57,20 @@ void setup() {
   hit = new SoundFile(this, "hit.mp3");
   die = new SoundFile(this, "die.mp3");
 
-  // Reset global variable values
+  // Reset global variable values every time setup() is called (For game restart)
   score = 0;
   scoreX = windowWidth / 2;
 
   birdJumpSpeed = 10;
   birdVelocity = 0;
   birdAlive = true;
+  birdJump = false;
 
   endSoundPlayed = false;
 }
 
 void draw() {
-  background(0, 0, 0);
+  background(204, 255, 255);
 
   tubes.draw();
   bird.draw();
@@ -85,6 +84,7 @@ void draw() {
 }
 
 void keyPressed() {
+  // Unable to prevent key repeat due to OS restrictions
   if (key == ' ' && birdAlive) {
     birdJump = true;
     wing.play();
