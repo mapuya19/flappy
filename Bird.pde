@@ -59,11 +59,12 @@ class Bird {
       endSoundPlayed = true;
     }
 
-    textFont(f,16);
+    textFont(f, 32);
     textAlign(CENTER, BOTTOM);
-    fill(0, 0, 255);
-    text("You lose! Press DOWN to restart.", width / 2, height / 2);
+    fill(0, 0, 0);
+    text("You lose! Press DOWN to restart.", (width + 2) / 2, (height + 2) / 2);
     fill(255, 255, 255);
+    text("You lose! Press DOWN to restart.", width / 2, height / 2);
 
     if (posY >= height - birdRadius) {
       noLoop();

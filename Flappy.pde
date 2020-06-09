@@ -47,7 +47,8 @@ void settings() {
 
 void setup() {
   background(0, 0, 0);
-  f = createFont("Arial",16,true); // Arial, 16 point, anti-aliasing on
+  f = createFont("flappy-font.ttf", 32, true); // flappy-font, 32 point, anti-aliasing on
+  textAlign(CENTER, BOTTOM);
 
   bird = new Bird(birdX, birdY);
   tubes = new Tubes(tubeX);
@@ -81,6 +82,19 @@ void draw() {
   scoreBoard.update();
   
   bird.collisionCheck();
+}
+
+void mousePressed() {
+  if (birdAlive) {
+    birdJump = true;
+    wing.play();
+  }
+}
+
+void mouseReleased() {
+  if (birdAlive) {
+    birdJump = false;
+  }
 }
 
 void keyPressed() {

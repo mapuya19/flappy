@@ -6,8 +6,10 @@ class Score {
   }
 
   void draw() {
-    textFont(f,16);
-    fill(255, 0, 0);
+    textFont(f, 64);
+    fill(0, 0, 0);
+    text("Score: " + score, scoreX + 2, scoreY + 2);
+    fill(255, 255, 255);
     text("Score: " + score, scoreX, scoreY);
   }
 
